@@ -49,7 +49,10 @@ module.exports = function(grunt) {
           'node_modules/angular-animate/angular-animate.min.js',
           'node_modules/angular-sanitize/angular-sanitize.min.js',
           'node_modules/ng-toast/dist/ngToast.min.js',
+          'node_modules/moment/moment.js',
+          'node_modules/angular-moment/angular-moment.js',
           'node_modules/oauthio-web/dist/oauth.min.js',
+
         ],
         dest: 'public/js/lib/lib.min.js',
       },

@@ -3,6 +3,7 @@ angular.module("meltingpot", [
   'ngSanitize'
   'ngAnimate'
   'ngToast'
+  'angularMoment'
 ])
 
 .run [
