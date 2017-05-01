@@ -49,7 +49,12 @@ module.exports = function(grunt) {
           'node_modules/angular-animate/angular-animate.min.js',
           'node_modules/angular-sanitize/angular-sanitize.min.js',
           'node_modules/ng-toast/dist/ngToast.min.js',
+          'node_modules/moment/moment.js',
+          'node_modules/angular-moment/angular-moment.js',
           'node_modules/oauthio-web/dist/oauth.min.js',
+          'node_modules/octicons/index.js',
+          
+
         ],
         dest: 'public/js/lib/lib.min.js',
       },
@@ -57,9 +62,11 @@ module.exports = function(grunt) {
         src: [
           'node_modules/ng-toast/dist/ngToast.min.css',
           'node_modules/ng-toast/dist/ngToast-animation.min.css',
+          'node_modules/octicons/build/octicons.css',
         ],
         dest: 'public/css/lib/lib.min.css',
-      }
+      },
+
     },
 
     coffee: {

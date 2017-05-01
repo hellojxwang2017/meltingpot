@@ -1,8 +1,11 @@
 ListItemCtrl = ($scope, githubService) ->
-
-  $scope.getNotifications = () ->
-    githubService.notifications($scope.repo)
-
+  $scope.subjectlist = []
+  $scope.getNotifications = (repo) ->
+    githubService.notifications(repo)
+      .then (response) ->
+        for object in response
+          $scope.subjectlist.push(object)
+          console.log($scope.subjectlist)
   return
 
 ListItemCtrl
@@ -10,3 +13,4 @@ ListItemCtrl
 
 angular.module('meltingpot')
   .controller 'ListItemCtrl', ListItemCtrl
+

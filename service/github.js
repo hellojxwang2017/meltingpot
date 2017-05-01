@@ -1,7 +1,7 @@
 const config = require("../config.js");
 const randomstring = require('randomstring');
 const request = require('request-promise');
-
+var moment = require('moment');
 githubEndpoint = "https://api.github.com/";
 
 githubOAuth = {}
@@ -53,6 +53,7 @@ githubOAuth.oauthAccessToken = function(req, res) {
 
 githubOAuth.getOrganizationMember = function(req, res) {
   token = req.session.githubToken;
+  console.log("token"+token);
   if (!token) {
     res.end("Unauthorized");
     return;
@@ -79,6 +80,7 @@ ONEDAY = 1000 * 60 * 60 * 24
 
 githubOAuth.getNotifications = function(req, res) {
   token = req.session.githubToken;
+
   if (!token) {
     res.end("Unauthorized");
     return;
@@ -91,7 +93,8 @@ githubOAuth.getNotifications = function(req, res) {
 
   today = new Date();
   lastMonth = new Date(today - ONEDAY * 30);
-  lastMonthStr = `${lastMonth.getFullYear()}-${lastMonth.getMonth() + 1}-${lastMonth.getDay()}`;
+  lastMonthStr = lastMonth.toISOString();
+  //lastMonthStr = `${lastMonth.getFullYear()}-${lastMonth.getMonth() + 1}-${lastMonth.getDay()}`;
 
   url = `${githubEndpoint}repos/${repo}/notifications?since=${lastMonthStr}&access_token=${token}`;
   console.log(url);

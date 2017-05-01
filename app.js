@@ -1,5 +1,5 @@
 var express = require('express');
-
+var octicons = require("octicons");
 var app = module.exports = express();
 
 var redis_session = require('./service/session.js');

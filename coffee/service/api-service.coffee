@@ -1,7 +1,7 @@
 apiService = ($q, $http, $timeout, messageService) ->
   self = this
   processing = false
-
+  
   @get = (url) ->
     defer = $q.defer()
     $http.get(url).then ((res) ->

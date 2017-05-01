@@ -1,9 +1,33 @@
-h1
-  Github Repositories
+.git-user-img
+  img(ng-src="{{globalState.user.avatar_url}}" )
+  p
+  span() Welcome,&nbsp;
+  span(ng-bind="globalState.user.login")
 
 .git-repo-areas
-
+  h1
+    Github Repositories
   .git-repo( ng-repeat="repo in globalState.user.repos()" ng-controller="ListItemCtrl" )
-    .repo-name
-      span( ng-bind="repo.full_name" )
-      a.link-out( ng-href="{{repo.html_url}}" target="_blank" )
+    li
+      .repo-name
+        a(ng-bind="repo.full_name" ng-href="{{repo.html_url}}"  )
+      .repo-fork_from
+        span( ng-bind="repo.parent.fullname" )
+      .repo-description
+        span( ng-bind="repo.description" )
+      .repo-inline
+        span(ng-if="repo.language")
+          span.repo-language-color(ng-style="{'background-color':repo.language_color}")
+          span.repo-language(ng-bind = "repo.language")
+        span.repo-fork-count(ng-if="repo.forks_count !== 0")
+          span() Forked:&nbsp;
+          span.repo-forkcount(ng-bind="repo.forks_count")
+        span() Updated&nbsp;
+        span.repo-time(am-time-ago="repo.updated_at")
+        button(ng-click ="getNotifications(repo)") Notifications
+        p
+        .box-group(ng-repeat= "notification in subjectlist")
+          span() &nbsp;
+          span.notification-type(ng-bind="notification.subject.type")
+          span() :
+          span.notification-title(ng-bind="notification.subject.title")

@@ -1,10 +1,97 @@
 .git-repo-areas {
   margin: auto;
+  float: left;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.git-user-img{
+  float: left;
+  margin-right: 30px;
+  margin-top: 10px;
+  overflow: hidden;
+  font-size: 14px;
+
+}
+img{
+  height: 300px;
+  width: 300px;
 }
 
-.git-repo {
+.git-repo{
+  .box-group{
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #24292e;
+    background-color: #f4f4f4;
+    border: 1px solid #d1d5da;
+    vertical-align: middle;
+
+  }
+  li{
+    display: block;
+    border-bottom: 1px #e1e4e8 solid;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
   .repo-name {
-    font-size: 1.2rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0366d6;
+    text-decoration: none;
+
+    a {
+      color: #0366d6;
+    }
+    a:link {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  .repo-inline{
+    display: block;
+    font-size: 12px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    text-align: left;
+    line-height: 18px;
+
+  }
+  .repo-description{
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 1px;
+  }
+  .repo-language-color {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    font-size: 12px;
+    text-align: left;
+
+
+  }
+  .repo-fork-count{
+    margin-right: 16px;
+  }
+
+  .repo-language {
+    margin-left: 2px;
+    margin-right: 16px;
+  }
+  .repo-time {
+    margin-right: 16px;
+  }
+  .notification-title{
+    margin-left: 5px;
   }
   .link-out {
     position: relative;
@@ -15,7 +102,7 @@
     &:before {
       position: absolute;
       content: "";
-      border-right: 0.5rem solid $red;
+      border-right: 0.5rem solid red;
       border-bottom: 0.5rem solid transparent;
       width: 0.5rem;
       height: 0.5rem;
