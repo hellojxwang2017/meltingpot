@@ -53,7 +53,7 @@ githubOAuth.oauthAccessToken = function(req, res) {
 
 githubOAuth.getOrganizationMember = function(req, res) {
   token = req.session.githubToken;
-  console.log("token"+token);
+
   if (!token) {
     res.end("Unauthorized");
     return;

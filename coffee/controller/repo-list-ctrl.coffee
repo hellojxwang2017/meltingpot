@@ -5,7 +5,7 @@ RepoListCtrl = ($scope,$http) ->
           for repo in $scope.globalState.user.repos()
             if repo.language
               repo.language_color = json[repo.language]
-              console.log($scope.globalState.user.repos());
+             
 
   return
 

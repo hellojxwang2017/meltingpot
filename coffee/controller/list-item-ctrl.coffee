@@ -5,7 +5,7 @@ ListItemCtrl = ($scope, githubService) ->
       .then (response) ->
         for object in response
           $scope.subjectlist.push(object)
-          console.log($scope.subjectlist)
+       
   return
 
 ListItemCtrl
